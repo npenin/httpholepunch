@@ -12,6 +12,7 @@ COPY package*.json ./
 # If you are building your code for production
 RUN yarn
 COPY src src
+RUN yarn tsc -p .
 
 FROM node:lts-alpine
 # Create app directory
