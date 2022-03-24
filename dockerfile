@@ -27,7 +27,7 @@ COPY package*.json ./
 RUN yarn --production
 
 # Bundle app source
-COPY builder:/usr/src/app/dist .
+COPY --from=builder /usr/src/app/dist .
 
 EXPOSE 8080
 CMD [ "node", "server.js" ]
