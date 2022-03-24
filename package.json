@@ -1,0 +1,11 @@
+{
+  "name": "autoupgrade",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "author": "npenin",
+  "devDependencies": {
+    "@types/node": "^17.0.22",
+    "typescript": "^4.6.2"
+  }
+}
