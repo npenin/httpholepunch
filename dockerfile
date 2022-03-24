@@ -1,5 +1,19 @@
-FROM node:lts-alpine
+FROM node:lts-alpine as builder
 
+# Create app directory
+WORKDIR /usr/src/app
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
+
+# RUN npm install
+# If you are building your code for production
+RUN yarn
+COPY src src
+
+FROM node:lts-alpine
 # Create app directory
 WORKDIR /usr/src/app
 
@@ -13,7 +27,7 @@ COPY package*.json ./
 RUN yarn --production
 
 # Bundle app source
-COPY dist .
+COPY builder:/usr/src/app/dist .
 
 EXPOSE 8080
 CMD [ "node", "server.js" ]
