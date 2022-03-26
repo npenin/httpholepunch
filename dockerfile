@@ -32,4 +32,5 @@ RUN yarn --production
 COPY --from=builder /usr/src/app/dist .
 
 EXPOSE 8080
-CMD [ "node", "server.js" ]
+ENTRYPOINT [ "node" ]
+CMD [ "server-cli.js" ]
