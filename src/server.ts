@@ -20,8 +20,8 @@ export function handleUpgrade(upgradeMethod: string, handler: (req: http.Incomin
                 else
                 {
                     console.log('upgraded ');
-                    socket.pipe(remote);
-                    remote.pipe(socket);
+                    socket.pipe(remote, { end: true });
+                    remote.pipe(socket, { end: true });
                 }
             });
 

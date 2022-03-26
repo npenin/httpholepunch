@@ -53,8 +53,8 @@ function upgrade(url: string, credentials?: { user: string, password: string })
         server.on('connection', (socket) =>
         {
             console.log('connection received');
-            socket.pipe(httpsocket);
-            httpsocket.pipe(socket);
+            socket.pipe(httpsocket, { end: true });
+            httpsocket.pipe(socket, { end: true });
         });
     }, async function handleResponse(res: http.IncomingMessage)
     {
