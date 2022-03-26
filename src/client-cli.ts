@@ -55,12 +55,24 @@ function upgrade(url: string, credentials?: { user: string, password: string })
             console.log('connection received');
             socket.pipe(httpsocket, { end: true });
             httpsocket.pipe(socket, { end: true });
+            httpsocket.on('end', function ()
+            {
+
+                console.log('http socket ended. Stopping...')
+                server.close((e) =>
+                {
+                    if (e)
+                        console.error(e);
+                    else
+                        console.log('Stopped')
+                });
+            })
         });
     }, async function handleResponse(res: http.IncomingMessage)
     {
         if (res.statusCode == 401 && res.headers['www-authenticate']?.startsWith('Basic'))
         {
-            // var replServer = repl.start();
+            res.socket.end();
             const user = await question('username: ');
             const password = await question('password: ', { hidden: true });
             upgrade(url, { user, password });
