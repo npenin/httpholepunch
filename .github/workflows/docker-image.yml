@@ -11,6 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build the Docker image
-        run: docker build . --file dockerfile --tag npenin/httpholepunch:$(date +%s)
+        run: docker build . --file dockerfile --tag ghcr.io/npenin/httpholepunch
       - name: publish the docker image
         run: docker push ghcr.io/npenin/httpholepunch
