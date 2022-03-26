@@ -6,8 +6,8 @@ const server = http.createServer((req, res) =>
     res.end('Hello World');
 });
 
-const configFile = process.argv[2] || '../config.json';
+const configFile = process.argv[3] || '../config.json';
 
 server.on('upgrade', handleUpgrade('proxy', configuredHandleUpgrade(require(configFile))));
 
-server.listen(8080)
+server.listen(process.argv[2])
