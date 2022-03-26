@@ -34,4 +34,4 @@ COPY --from=builder /usr/src/app/dist ./dist
 
 EXPOSE 8080
 ENTRYPOINT [ "node" ]
-CMD [ "server-cli.js" ]
+CMD [ "dist/server-cli.js" ]
