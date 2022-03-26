@@ -23,14 +23,15 @@ WORKDIR /usr/src/app
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
 COPY package*.json ./
-COPY config.json ./
+COPY config.json ../
 
 # RUN npm install
 # If you are building your code for production
 RUN yarn --production
 
 # Bundle app source
-COPY --from=builder /usr/src/app/dist .
+COPY --from=builder /usr/src/app/dist dist
+WORKDIR /usr/src/app/dist
 
 EXPOSE 8080
 ENTRYPOINT [ "node" ]
