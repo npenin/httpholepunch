@@ -1,29 +1,28 @@
-import http from 'http'
+import http, { OutgoingHttpHeaders } from 'http'
+import https from 'https'
 import net from 'net'
 
-const server = net.createServer();
-
-const req = http.request(process.argv[2], { headers: { connection: 'upgrade', upgrade: 'proxy', } }).on('upgrade', function (res)
+export function punch(url: string, upgradeMethod: string, credentials?: { user: string, password: string }, headers?: OutgoingHttpHeaders)
 {
-    try
-    {
-        if (res.statusCode == 101)
-        {
-            server.on('connection', (socket) =>
-            {
-                console.log('connection received');
-                socket.pipe(res.socket);
-                res.socket.pipe(socket);
-            });
-        }
-        else
-            console.log(res);
-    } catch (e)
-    {
-        console.error(e);
-    }
-});
+    headers = { connection: 'upgrade', upgrade: upgradeMethod, ...headers };
+    const options: http.RequestOptions | https.RequestOptions = { headers };
+    if (credentials)
+        options.auth = credentials.user + ':' + credentials.password;
 
-server.listen(process.argv[3], () =>
-    console.log(`listening on ${process.argv[3]}`));
-req.flushHeaders();
+    return new Promise<net.Socket>((resolve, reject) =>
+    {
+        function handleUpgrade(res: http.IncomingMessage, httpsocket: net.Socket)
+        {
+            resolve(httpsocket)
+        }
+
+        function handleResponse(res: http.IncomingMessage)
+        {
+            reject(res);
+        }
+
+        if (url.startsWith('https://'))
+            return https.request(url, options).on('upgrade', handleUpgrade).on('response', handleResponse).flushHeaders();
+        return http.request(url, options).on('upgrade', handleUpgrade).on('response', handleResponse).flushHeaders();
+    })
+}

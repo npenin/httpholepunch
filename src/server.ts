@@ -1,24 +1,17 @@
 import http from 'http'
 import net from 'net'
 
-const server = http.createServer((req, res) =>
+export function handleUpgrade(upgradeMethod: string, handler: (req: http.IncomingMessage, socket: net.Socket) => Promise<net.Socket>)
 {
-    res.end('Hello World');
-});
-
-const configFile = process.argv[2] || '../config.json';
-
-server.on('upgrade', async (req, socket: net.Socket, head) =>
-{
-    const config = await import(configFile);
-    if (req.headers.upgrade === 'proxy' && req.url && req.url in config)
+    return async (req: http.IncomingMessage, socket: net.Socket) =>
     {
-        console.log('upgrading from ' + req.url)
-        const remote = net.connect(config[req.url as keyof typeof config], () =>
+        if (req.headers.upgrade === upgradeMethod && req.url)
         {
+            console.log('upgrading from ' + req.url)
+            const remote = await handler(req, socket);
             socket.setNoDelay(true);
             socket.write('HTTP/1.1 101 Switching Protocols\r\n' +
-                'Upgrade: proxy\r\n' +
+                'Upgrade: ' + upgradeMethod + '\r\n' +
                 'Connection: Upgrade\r\n' +
                 '\r\n', function (e)
             {
@@ -40,8 +33,34 @@ server.on('upgrade', async (req, socket: net.Socket, head) =>
             {
                 console.error(e);
             })
-        });
+        }
     }
-});
+}
 
-server.listen(8080)
+export function configuredHandleUpgrade(config: Record<string, net.NetConnectOpts>)
+{
+    return (req: http.IncomingMessage, socket: net.Socket): Promise<net.Socket> => 
+    {
+        if (!req.url || !(req.url in config))
+        {
+            socket.write('404 Not Found\r\nContent-Length: 0\r\n');
+            return Promise.reject(new Error('no such URL'));
+        }
+        return new Promise<net.Socket>((resolve, reject) =>
+        {
+            var resolved = false;
+            const remote = net.connect(config[req.url as keyof typeof config], () =>
+            {
+                resolved = true;
+                resolve(remote);
+            });
+
+            remote.on('error', (e) =>
+            {
+                if (!resolved)
+                    reject(e);
+            })
+        });
+
+    }
+}
