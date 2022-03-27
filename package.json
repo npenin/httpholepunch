@@ -4,6 +4,7 @@
     "serve-punch-hole": "./dist/serve-cli.js",
     "http-punch-hole": "./dist/client-cli.js"
   },
+  "types": "dist/index.d.ts",
   "version": "1.0.0",
   "main": "dist/index.js",
   "license": "MIT",
