@@ -4,7 +4,7 @@ import net from 'net'
 
 export function punch(url: string, upgradeMethod: string, credentials?: { user: string, password: string }, headers?: OutgoingHttpHeaders)
 {
-    headers = { connection: 'upgrade', upgrade: upgradeMethod, ...headers };
+    headers = { connection: 'Upgrade', upgrade: upgradeMethod, ...headers };
     const options: http.RequestOptions | https.RequestOptions = { headers };
     if (credentials)
         options.auth = credentials.user + ':' + credentials.password;
