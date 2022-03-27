@@ -1,16 +1,17 @@
 {
   "name": "http-punch-hole",
   "bin": {
-    "serve-punch-hole": "./dist/serve-cli.js",
-    "http-punch-hole": "./dist/client-cli.js"
+    "http-punch-hole": "./dist/client-cli.js",
+    "serve-punch-hole": "./dist/serve-cli.js"
   },
   "types": "dist/index.d.ts",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "license": "MIT",
   "author": "npenin",
   "devDependencies": {
-    "@types/node": "^17.0.22",
+    "@types/node": "^17.0.23",
     "typescript": "^4.6.2"
-  }
+  },
+  "packageManager": "yarn@3.2.0"
 }
