@@ -18,7 +18,10 @@ export function punch(url: string, upgradeMethod: string, credentials?: { user: 
 
         function handleResponse(res: http.IncomingMessage)
         {
-            reject(res);
+            if (res.statusCode == 101 && res.headers.connection?.toLowerCase() == 'upgrade')
+                resolve(res.socket);
+            else
+                reject(res);
         }
 
         if (url.startsWith('https://'))

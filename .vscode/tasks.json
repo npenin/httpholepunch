@@ -7,6 +7,7 @@
 			"problemMatcher": [
 				"$tsc-watch"
 			],
+			"isBackground": true,
 			"group": "build",
 			"label": "tsc: watch - tsconfig.json"
 		}
