@@ -1,2 +1,9 @@
 !dist
 src
+.vscode
+.whitesource
+
+dockerfile
+renovate.json
+tsconfig.json
+config.json
