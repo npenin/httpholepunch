@@ -2,6 +2,7 @@
 src
 .vscode
 .whitesource
+.yarn
 
 dockerfile
 renovate.json
