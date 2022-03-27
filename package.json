@@ -5,7 +5,7 @@
     "http-punch-hole": "./dist/client-cli.js"
   },
   "types": "dist/index.d.ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "license": "MIT",
   "author": "npenin",
