@@ -4,6 +4,8 @@ import stream from 'stream';
 import http from 'http';
 import { punch } from './client';
 
+
+
 function question(question: string, options: { hidden?: boolean } = {})
 {
     return new Promise<string>((resolve, reject) =>
@@ -78,7 +80,16 @@ function upgrade(url: string, credentials?: { user: string, password: string })
             upgrade(url, { user, password });
         }
         else
-            console.log({ statusCode: res.statusCode, headers: res.headers });
+        {
+            if (res.statusCode)
+            {
+                res.on('data', function (d)
+                {
+                    console.log(d);
+                })
+            }
+            console.log(res.statusCode && { statusCode: res.statusCode, headers: res.headers } || res);
+        }
     })
 }
 
