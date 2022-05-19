@@ -64,7 +64,7 @@ export function punch(url: string, upgradeMethod: string, credentials?: { user: 
             }).on('error', reject).end();
         }
         if (url.startsWith('https://'))
-            return https.request(url, options).on('upgrade', handleUpgrade).on('response', handleResponse).flushHeaders();
-        return http.request(url, options).on('upgrade', handleUpgrade).on('response', handleResponse).flushHeaders();
+            return https.request(url, options).on('upgrade', handleUpgrade).on('response', handleResponse).on('error', reject).flushHeaders();
+        return http.request(url, options).on('upgrade', handleUpgrade).on('response', handleResponse).on('error', reject).flushHeaders();
     })
 }
