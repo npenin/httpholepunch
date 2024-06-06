@@ -2,13 +2,13 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 6
-  cacheKey: 8
+  version: 8
+  cacheKey: 10
 
 "@types/node@npm:^17.0.23":
   version: 17.0.23
   resolution: "@types/node@npm:17.0.23"
-  checksum: a3517554737cbb042e76c30d0e5482192ac4d9bea0eeb086e2622d9cabf460a0eb52a696b99fcd18e7fcc93c96db6cc7ae507f6608f256ef0b5c1d8c87a5a470
+  checksum: 10/61908e6cc99fa791932a37c9cfcc3413d5849e825daa761f79b4853e1b3cddff257e20531c3842c2ec1b8a0061f1390dc697f7fdaba756fc5fe00a57e5277d35
   languageName: node
   linkType: hard
 
@@ -16,8 +16,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "http-punch-hole@workspace:."
   dependencies:
-    "@types/node": ^17.0.23
-    typescript: ^4.6.2
+    "@types/node": "npm:^17.0.23"
+    typescript: "npm:^4.6.2"
   bin:
     http-punch-hole: ./dist/client-cli.js
     serve-punch-hole: ./dist/serve-cli.js
@@ -30,16 +30,16 @@ __metadata:
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 8a44ed7e6f6c4cb1ebe8cf236ecda2fb119d84dcf0fbd77e707b2dfea1bbcfc4e366493a143513ce7f57203c75da9d4e20af6fe46de89749366351046be7577c
+  checksum: 10/73e8a8af8a571453a80c8f3988afacf87541b6c0d532dd9a1621d0c7f73257edb2aac0687ef74068aaef892c34d8437be3d7d246469ea5970c7e3fa7205fb103
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.6.2#~builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A^4.6.2#optional!builtin<compat/typescript>":
   version: 4.6.2
-  resolution: "typescript@patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=bda367"
+  resolution: "typescript@patch:typescript@npm%3A4.6.2#optional!builtin<compat/typescript>::version=4.6.2&hash=5d3a66"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 40b493a71747fb89fa70df104e2c4a5e284b43750af5bea024090a5261cefa387f7a9372411b13030f7bf5555cee4275443d08805642ae5c74ef76740854a4c7
+  checksum: 10/1c428da62dc033ebf318100764be08ac6fb389b3d5b4bd288763f99a37eb1fa7d81325b92ba4969722558a227b253ad756fe8f051966daf8db9b5d0193afc96c
   languageName: node
   linkType: hard
