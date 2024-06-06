@@ -10,7 +10,7 @@
   "license": "MIT",
   "author": "npenin",
   "devDependencies": {
-    "@types/node": "^17.0.23",
+    "@types/node": "^20.0.0",
     "typescript": "^5.0.0"
   },
   "packageManager": "yarn@4.2.2"
