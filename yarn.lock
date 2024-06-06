@@ -3,12 +3,12 @@
 
 __metadata:
   version: 8
-  cacheKey: 10
+  cacheKey: 10c0
 
 "@types/node@npm:^17.0.23":
   version: 17.0.23
   resolution: "@types/node@npm:17.0.23"
-  checksum: 10/61908e6cc99fa791932a37c9cfcc3413d5849e825daa761f79b4853e1b3cddff257e20531c3842c2ec1b8a0061f1390dc697f7fdaba756fc5fe00a57e5277d35
+  checksum: 10c0/5c70285a5454aa1daa1f515c1b6df8ccdc85ba18c19d650355f32ac00f82494d9b0ec4c6f943bcc4081acc5662aa68ff84f4e91f35f0b23087b3ed4682f73ad4
   languageName: node
   linkType: hard
 
@@ -17,29 +17,29 @@ __metadata:
   resolution: "http-punch-hole@workspace:."
   dependencies:
     "@types/node": "npm:^17.0.23"
-    typescript: "npm:^4.6.2"
+    typescript: "npm:^5.0.0"
   bin:
     http-punch-hole: ./dist/client-cli.js
     serve-punch-hole: ./dist/serve-cli.js
   languageName: unknown
   linkType: soft
 
-"typescript@npm:^4.6.2":
-  version: 4.6.2
-  resolution: "typescript@npm:4.6.2"
+"typescript@npm:^5.0.0":
+  version: 5.4.5
+  resolution: "typescript@npm:5.4.5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10/73e8a8af8a571453a80c8f3988afacf87541b6c0d532dd9a1621d0c7f73257edb2aac0687ef74068aaef892c34d8437be3d7d246469ea5970c7e3fa7205fb103
+  checksum: 10c0/2954022ada340fd3d6a9e2b8e534f65d57c92d5f3989a263754a78aba549f7e6529acc1921913560a4b816c46dce7df4a4d29f9f11a3dc0d4213bb76d043251e
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^4.6.2#optional!builtin<compat/typescript>":
-  version: 4.6.2
-  resolution: "typescript@patch:typescript@npm%3A4.6.2#optional!builtin<compat/typescript>::version=4.6.2&hash=5d3a66"
+"typescript@patch:typescript@npm%3A^5.0.0#optional!builtin<compat/typescript>":
+  version: 5.4.5
+  resolution: "typescript@patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>::version=5.4.5&hash=5adc0c"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10/1c428da62dc033ebf318100764be08ac6fb389b3d5b4bd288763f99a37eb1fa7d81325b92ba4969722558a227b253ad756fe8f051966daf8db9b5d0193afc96c
+  checksum: 10c0/db2ad2a16ca829f50427eeb1da155e7a45e598eec7b086d8b4e8ba44e5a235f758e606d681c66992230d3fc3b8995865e5fd0b22a2c95486d0b3200f83072ec9
   languageName: node
   linkType: hard
