@@ -19,30 +19,30 @@ __metadata:
   resolution: "http-punch-hole@workspace:."
   dependencies:
     "@types/node": "npm:^20.0.0"
-    typescript: "npm:^5.0.0"
+    typescript: "npm:^6.0.0"
   bin:
     http-punch-hole: ./dist/client-cli.js
     serve-punch-hole: ./dist/serve-cli.js
   languageName: unknown
   linkType: soft
 
-"typescript@npm:^5.0.0":
-  version: 5.4.5
-  resolution: "typescript@npm:5.4.5"
+"typescript@npm:^6.0.0":
+  version: 6.0.3
+  resolution: "typescript@npm:6.0.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/2954022ada340fd3d6a9e2b8e534f65d57c92d5f3989a263754a78aba549f7e6529acc1921913560a4b816c46dce7df4a4d29f9f11a3dc0d4213bb76d043251e
+  checksum: 10c0/4a25ff5045b984370f48f196b3a0120779b1b343d40b9a68d114ea5e5fff099809b2bb777576991a63a5cd59cf7bffd96ff6fe10afcefbcb8bd6fb96ad4b6606
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.0.0#optional!builtin<compat/typescript>":
-  version: 5.4.5
-  resolution: "typescript@patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>::version=5.4.5&hash=5adc0c"
+"typescript@patch:typescript@npm%3A^6.0.0#optional!builtin<compat/typescript>":
+  version: 6.0.3
+  resolution: "typescript@patch:typescript@npm%3A6.0.3#optional!builtin<compat/typescript>::version=6.0.3&hash=b45daf"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/db2ad2a16ca829f50427eeb1da155e7a45e598eec7b086d8b4e8ba44e5a235f758e606d681c66992230d3fc3b8995865e5fd0b22a2c95486d0b3200f83072ec9
+  checksum: 10c0/eed465bd04b344517bd91eb232fd0187d93e34625c65ec93777449e29157c6c2accae409474a68a867b90465224d4908f9bce78ad763c159cacd7263ae24b5fc
   languageName: node
   linkType: hard
 

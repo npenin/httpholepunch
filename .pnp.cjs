@@ -28,14 +28,14 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["@types/node", "npm:20.14.2"],\
-          ["typescript", "patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>::version=5.4.5&hash=5adc0c"]\
+          ["typescript", "patch:typescript@npm%3A6.0.3#optional!builtin<compat/typescript>::version=6.0.3&hash=b45daf"]\
         ],\
         "linkType": "SOFT"\
       }]\
     ]],\
     ["@types/node", [\
       ["npm:20.14.2", {\
-        "packageLocation": "../../../../cache/others/berry/cache/@types-node-npm-20.14.2-fa12d1e34b-10c0.zip/node_modules/@types/node/",\
+        "packageLocation": "../../../../../../runner/cache/others/berry/cache/@types-node-npm-20.14.2-fa12d1e34b-10c0.zip/node_modules/@types/node/",\
         "packageDependencies": [\
           ["@types/node", "npm:20.14.2"],\
           ["undici-types", "npm:5.26.5"]\
@@ -49,23 +49,23 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["http-punch-hole", "workspace:."],\
           ["@types/node", "npm:20.14.2"],\
-          ["typescript", "patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>::version=5.4.5&hash=5adc0c"]\
+          ["typescript", "patch:typescript@npm%3A6.0.3#optional!builtin<compat/typescript>::version=6.0.3&hash=b45daf"]\
         ],\
         "linkType": "SOFT"\
       }]\
     ]],\
     ["typescript", [\
-      ["patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>::version=5.4.5&hash=5adc0c", {\
-        "packageLocation": "../../../../cache/others/berry/cache/typescript-patch-6e159bfddb-10c0.zip/node_modules/typescript/",\
+      ["patch:typescript@npm%3A6.0.3#optional!builtin<compat/typescript>::version=6.0.3&hash=b45daf", {\
+        "packageLocation": "../../../../../../runner/cache/others/berry/cache/typescript-patch-7237bedb5b-10c0.zip/node_modules/typescript/",\
         "packageDependencies": [\
-          ["typescript", "patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>::version=5.4.5&hash=5adc0c"]\
+          ["typescript", "patch:typescript@npm%3A6.0.3#optional!builtin<compat/typescript>::version=6.0.3&hash=b45daf"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["undici-types", [\
       ["npm:5.26.5", {\
-        "packageLocation": "../../../../cache/others/berry/cache/undici-types-npm-5.26.5-de4f7c7bb9-10c0.zip/node_modules/undici-types/",\
+        "packageLocation": "../../../../../../runner/cache/others/berry/cache/undici-types-npm-5.26.5-de4f7c7bb9-10c0.zip/node_modules/undici-types/",\
         "packageDependencies": [\
           ["undici-types", "npm:5.26.5"]\
         ],\
